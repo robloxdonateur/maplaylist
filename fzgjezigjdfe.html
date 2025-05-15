@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Playlist Fantôme Arc-en-ciel + Croix</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(-45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8);
+      background-size: 600% 600%;
+      animation: rainbowBG 20s ease infinite;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: url('./croix.png') 16 16, auto; /* ← Curseur personnalisé */
+    }
+
+    @keyframes rainbowBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.75);
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+      color: #ffffff;
+      max-width: 400px;
+      backdrop-filter: blur(6px);
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 26px;
+      color: #ffffff;
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    .btn {
+      background-color: #ff00c8;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 0 10px #ff00c8;
+    }
+
+    .btn:hover {
+      background-color: #ff4de6;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #ff4de6;
+    }
+
+    iframe {
+      margin-top: 30px;
+      border-radius: 12px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌈🪦 Clique pour écouter ma playlist de l’au-delà</h1>
+    <button class="btn" onclick="showPlaylist()">Accéder à la Playlist</button>
+    <iframe id="spotifyPlayer" src="https://open.spotify.com/embed/playlist/36Dp8Ux8W2kakPBdqTs8JQ?utm_source=generator" width="300" height="380" allow="encrypted-media"></iframe>
+  </div>
+
+  <script>
+    function showPlaylist() {
+      document.getElementById('spotifyPlayer').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
+
